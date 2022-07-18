@@ -109,7 +109,7 @@ public class DetectLanguageFormsImpl implements DetectLanguageForms {
 		return java.util.Optional.ofNullable(
         		java.util.Optional.ofNullable(request.getParameter(AF_ACCEPT_LANG_PARAM))
                 .orElseGet(()->java.util.Optional.ofNullable(getLanguageSelector())
-                		.orElse(null)))
+                		.orElse(currentPage.getLanguage(false).toLanguageTag())))
             .orElse(null);
 	}
 	
