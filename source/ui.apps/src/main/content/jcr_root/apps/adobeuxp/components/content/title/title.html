@@ -15,11 +15,19 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <sly 
      data-sly-use.title="com.adobe.cq.wcm.core.components.models.Title"
+     data-sly-use.detectlang="com.adobe.acs.adobeuxp.wcm.core.components.models.DetectLanguageForms"
      data-sly-use.template="core/wcm/components/commons/v1/templates.html"
      data-sly-test.text="${title.text}">
-<!--/*    <h1 property="name" data-sly-element="${title.type}" id="wb-cont">${text}</h1> */-->
-<h1 class="cmp-title__text ${title.id}" data-sly-element="${title.type}" id="wb-cont"><a data-sly-unwrap="${!title.linkURL || title.linkDisabled}" class="cmp-title__link" href="${title.linkURL}">${text}</a></h1>
+<h1 class="cmp-title__text ${title.id}" data-sly-element="${title.type}" id="${title.type=='h1'?'wb-cont':''}">
+<a data-sly-unwrap="${!title.link.valid || title.linkDisabled}" class="cmp-title__link" data-sly-attribute="${title.link.htmlAttributes}">
+        <sly data-sly-test="${detectlang.lang!=null}">
+            ${text @i18n, locale=detectlang.lang}
+        </sly >
+        <sly data-sly-test="${detectlang.lang==null}">
+            ${text}
+        </sly >
+    </a>
+</h1>
 </sly>
-
 
 <sly data-sly-call="${template.placeholder @ isEmpty=!text, classAppend='cmp-title'}"></sly>
