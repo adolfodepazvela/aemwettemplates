@@ -18,10 +18,12 @@
  --------------------------------------------------------------------------%>
 <%@include file="/libs/fd/af/components/guidesglobal.jsp" %>
 <%@page session="false"%>
-<%@page import="com.day.cq.i18n.I18n" %>
-<%
-    I18n i18n = new I18n(slingRequest);
-%>
+<%@page import="com.day.cq.i18n.I18n,com.adobe.acs.adobeuxp.wcm.core.components.models.DetectLanguageForms" %>
+
+
+<c:set var="detectlang" value="<%= slingRequest.adaptTo(DetectLanguageForms.class)%>"/>
+
+
 <c:choose>
     <c:when test="${isEditMode}">
         <c:if test="${componentContext!=null}">
@@ -35,7 +37,7 @@
     </c:otherwise>
 </c:choose>
 <c:if test="${guideField.hideTitle eq false}">
-    <legend <c:if test="${guideField.mandatory}">class="required"</c:if> id="${guideid}_label"><span class="field-name">${guide:encodeForHtml(guideField.title,xssAPI)} </span><c:if test="${guideField.mandatory}">&nbsp;<strong class="required">(<%= i18n.get("required") %>)</strong></c:if></legend>
+    <legend <c:if test="${guideField.mandatory}">class="required"</c:if> id="${guideid}_label"><span class="field-name">${guide:encodeForHtml(guideField.title,xssAPI)} </span><c:if test="${guideField.mandatory}">&nbsp;<strong class="required">(${detectlang.lang=="fr"?"obligatoire":"required"}) </strong></c:if></legend>
          <%-- above code has been written in one-line intentionally. Don't indent it as it breaks inline editing of title --%>
 </c:if>
 

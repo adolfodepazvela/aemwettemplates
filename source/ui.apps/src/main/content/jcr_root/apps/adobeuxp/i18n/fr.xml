@@ -119,4 +119,7 @@
     <Topic_x0020_Template
         jcr:primaryType="sling:MessageEntry"
         sling:message="Modèle de sujet"/>
+    <required
+        jcr:primaryType="sling:MessageEntry"
+        sling:message="obligatoire"/>
 </jcr:root>
