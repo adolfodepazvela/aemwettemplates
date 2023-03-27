@@ -21,7 +21,7 @@
     <groupId>com.adobe.acs</groupId>
     <artifactId>adobeuxp</artifactId>
     <packaging>pom</packaging>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
     <description>Adobe UPX Project</description>
 
     <modules>

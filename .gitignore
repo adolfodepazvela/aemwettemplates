@@ -24,3 +24,4 @@ source/it.launcher/target/maven-archiver/pom.properties
 source/it.tests/target/classes/META-INF/MANIFEST.MF
 source/ui.apps/target/classes/META-INF/MANIFEST.MF
 source/ui.apps/target/maven-archiver/pom.properties
+*.versionsBackup
