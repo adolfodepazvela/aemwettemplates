@@ -23,12 +23,13 @@
 
 <sly data-sly-test="${!wcmmode.disabled && runmode.runmodes.author}" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.js @ categories='uxp.base'}"
-	 data-sly-call="${clientlib.js @ categories='jquery'}"
-	 data-sly-call="${clientlib.js @ categories='granite.utils'}"/>
+      data-sly-call="${clientlib.js @ categories='jquery'}"
+      data-sly-call="${clientlib.js @ categories='granite.utils'}"/>
 
-<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.css @ categories='uxp.extra'}"/>
+<!--  <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.css @ categories='uxp.extra'}"/> -->
 
+
+<link rel="stylesheet" href="/etc.clientlibs/adobeuxp/clientlibs/clientlib-site-extra.css?id=3243243423" defer="true" type="text/css">
 
 <!--[if gte IE 9 | !IE ]><!-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

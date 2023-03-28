@@ -25,13 +25,13 @@
 
         <sly data-sly-test="${detectlang.lang == 'fr'}">
             <p>Si vous changez de language, les informations seront perdu.  Voulez-vous continuer ?</p>
-            <a lang="fr" href="${detectlang.actionURL}" class="btn left btn-primary" type="button">Oui</a>&nbsp;
+            <a lang="fr" data-current-lang="en" href="${detectlang.actionURL}" class="btn left btn-primary" type="button">Oui</a>&nbsp;
             <button class="btn left btn-default overlay-close" type="button">Non</button>   
 
         </sly >  
         <sly data-sly-test="${detectlang.lang == 'en'}">
             <p>Data will bel lost when you change languages.  Do you want to Continue?</p>
-            <a lang="en" href="${detectlang.actionURL}" class="btn left btn-primary" type="button">yes</a>&nbsp;
+            <a lang="en" data-current-lang="fr" href="${detectlang.actionURL}" class="btn left btn-primary" type="button">yes</a>&nbsp;
             <button class="btn left btn-default overlay-close" type="button">No</button>   
         </sly >  
 
@@ -46,13 +46,13 @@
                 <li>
                 <sly data-sly-test="${detectlang.lang == 'en'}">
 
-                    <a lang="fr" href="#top-bar" aria-controls="top-bar" class="overlay-lnk" role="button">
+                    <a lang="en" href="#top-bar" aria-controls="top-bar" class="overlay-lnk" role="button">
                     <span class="hidden-xs">${detectlang.label}</span>
                     <abbr title="Français" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
                     </a>
                  </sly >  
                  <sly data-sly-test="${detectlang.lang == 'fr'}">
-                    <a lang="en" href="#top-bar" aria-controls="top-bar" class="overlay-lnk" role="button">
+                    <a lang="fr" href="#top-bar" aria-controls="top-bar" class="overlay-lnk" role="button">
                     <span class="hidden-xs">${detectlang.label}</span>
                     <abbr title="English" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">en</abbr>
                      </a>       
